@@ -3,8 +3,8 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 module.exports = withModuleFederationPlugin({
 
   remotes: {
-   'policy-mfe': 'http://localhost:4201/remoteEntry.js',
-   'payment-mfe': 'http://localhost:4202/remoteEntry.js',
+   'policy-mfe': 'https://cerulean-beijinho-a3aebd.netlify.app/remoteEntry.js',
+   'payment-mfe': 'https://velvety-kangaroo-c964de.netlify.app/remoteEntry.js',
   },
 
   shared: {
