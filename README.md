@@ -26,11 +26,11 @@ The Container dynamically loads MFEs at runtime using Webpack Module Federation.
 
 Communication between Policy and Payment MFEs is implemented using:
 
-- LocalStorage for shared data
-- Custom Browser Event (`premium-updated`) for notification
+- LocalStorage (selectedPolicyId)
+- CustomEvent (policy-selected)
 
 Flow:
-Policy MFE → stores premium amount → dispatches event  
+Policy MFE → stores policy id → dispatches event  
 Payment MFE → listens → reads data → updates UI
 
 ## Cross Cutting Concerns
@@ -44,7 +44,7 @@ Webpack Module Federation is used for runtime integration between Container and 
 SCSS is used for styling across all applications.
 
 ### 3. Web Worker
-Payment processing is handled in a Web Worker to simulate background processing.
+Payment processing is executed in a Web Worker. For local MFE cross-origin limitations, an inline Blob worker is used.
 
 Due to local development cross-origin constraints, an inline Blob-based worker is used.
 
@@ -69,6 +69,12 @@ insurance-mfe/
 ├── policy-mfe/
 │
 └── payment-mfe/
+
+## Production Considerations
+
+- MFEs should be deployed under a single domain using a reverse proxy or CDN.
+- Cross-MFE communication should use shared state or backend APIs instead of LocalStorage.
+- Web Workers will load normally when deployed under the same origin.
 
 ## How to Run Locally
 
