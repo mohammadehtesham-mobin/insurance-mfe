@@ -1,0 +1,29 @@
+h2 {
+  margin-bottom: 15px;
+}
+
+.payment-card {
+  background: #f9fbff;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #e0e6f0;
+  max-width: 400px;
+}
+
+.payment-card p {
+  margin: 6px 0;
+}
+
+button {
+  margin-top: 12px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1f5a22;
+}

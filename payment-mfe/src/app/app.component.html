@@ -1,10 +1,16 @@
-<h2>Payment Screen</h2>
 
-<div *ngIf="amount; else noData">
-  <p><b>Amount to Pay:</b> ₹{{ amount }}</p>
+
+<div *ngIf="selectedPolicy; else noData" class="payment-card">
+  <p><b>Policy ID:</b> {{ selectedPolicy.id }}</p>
+  <p><b>Policy:</b> {{ selectedPolicy.name }}</p>
+  <p><b>Holder:</b> {{ selectedPolicy.holderName }}</p>
+  <p><b>Sum Insured:</b> ₹{{ selectedPolicy.sumInsured }}</p>
+  <p><b>Premium:</b> ₹{{ selectedPolicy.premium }}</p>
+  <p><b>Next Due:</b> {{ selectedPolicy.nextDueDate }}</p>
+
   <button (click)="pay()">Confirm Payment</button>
 </div>
 
 <ng-template #noData>
-  <p>No premium selected.</p>
+  <p>No policy selected.</p>
 </ng-template>

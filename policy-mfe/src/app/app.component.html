@@ -1,9 +1,25 @@
-<h2>Policy Details</h2>
 
-<div>
-  <p><b>Policy No:</b> INS-101</p>
-  <p><b>Customer:</b> John Doe</p>
-  <p><b>Premium Due:</b> ₹5000</p>
-</div>
 
-<button (click)="payPremium()">Pay Premium</button>
+<table border="1" cellpadding="8">
+  <tr>
+    <th>ID</th>
+    <th>Policy</th>
+    <th>Sum Insured</th>
+    <th>Premium</th>
+    <th>Frequency</th>
+    <th>Next Due</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let policy of policyList">
+    <td>{{ policy.id }}</td>
+    <td>{{ policy.name }}</td>
+    <td>₹{{ policy.sumInsured }}</td>
+    <td>₹{{ policy.premium }}</td>
+    <td>{{ policy.frequency }}</td>
+    <td>{{ policy.nextDueDate }}</td>
+    <td>
+      <button (click)="pay(policy.id)">Pay</button>
+    </td>
+  </tr>
+</table>
