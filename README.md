@@ -63,8 +63,11 @@ LocalStorage is used to store premium data (no backend required).
 ## Project Structure
 
 insurance-mfe/
+│
 ├── container-app/
+│
 ├── policy-mfe/
+│
 └── payment-mfe/
 
 ## How to Run Locally
