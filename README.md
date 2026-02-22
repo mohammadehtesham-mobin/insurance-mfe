@@ -46,8 +46,6 @@ SCSS is used for styling across all applications.
 ### 3. Web Worker
 Payment processing is executed in a Web Worker. For local MFE cross-origin limitations, an inline Blob worker is used.
 
-Due to local development cross-origin constraints, an inline Blob-based worker is used.
-
 ### 4. Client Storage
 LocalStorage is used to store premium data (no backend required).
 
