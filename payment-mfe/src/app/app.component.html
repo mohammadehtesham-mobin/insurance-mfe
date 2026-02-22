@@ -1,0 +1,10 @@
+<h2>Payment Screen</h2>
+
+<div *ngIf="amount; else noData">
+  <p><b>Amount to Pay:</b> ₹{{ amount }}</p>
+  <button (click)="pay()">Confirm Payment</button>
+</div>
+
+<ng-template #noData>
+  <p>No premium selected.</p>
+</ng-template>
